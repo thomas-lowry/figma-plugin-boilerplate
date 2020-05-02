@@ -1,0 +1,7 @@
+<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="51" height="51" fill="white"/>
+<circle cx="25" cy="25" r="19" fill="#FFE600"/>
+<ellipse cx="19.5" cy="17.5" rx="1.5" ry="4.5" fill="#202020"/>
+<ellipse cx="31.5" cy="17.5" rx="1.5" ry="4.5" fill="#202020"/>
+<ellipse cx="25.5" cy="33" rx="5" ry="4.5" transform="rotate(90 25.5 33)" fill="#202020"/>
+</svg>
