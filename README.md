@@ -28,7 +28,8 @@ Typing in commands to the terminal can feel intimidating. I know it scared me aw
 
 If this is your first time doing anything like this, you will need to download and install [NodeJs](https://nodejs.org/en/) first. If you're looking for a code editor, I highly recommend [VS Code](https://code.visualstudio.com/) by Microsoft. It as an build-in command line terminal and makes it really easy to get started.
 
-1. Create a copy of this boilerplate project on your local drive. You can do so by downloading a zip from the green 'Clone or download' button. Or if you are already familiar with the command line, you can enter:
+*Step 1*
+Create a copy of this boilerplate project on your local drive. You can do so by downloading a zip from the green 'Clone or download' button. Or if you are already familiar with the command line, you can enter:
 ```bash 
 git clone https://github.com/thomas-lowry/figma-plugin-boilerplate.git
 ```
@@ -37,7 +38,8 @@ or, if you don't want the download entire Git history:
 npx degit thomas-lowry/figma-plugin-boilerplate my-plugin
 ```
 
-2. Next you will need to run a terminal command to install this project's dependencies. If you're unfamiliar with this concept, this just downloads bunch of scripts required for the boilerplate to work properly. 
+*Step 2*
+Next you will need to run a terminal command to install this project's dependencies. If you're unfamiliar with this concept, this just downloads bunch of scripts required for the boilerplate to work properly. 
 
 If you're using VS Code, you can `File → Open Workspace` and choose the folder where you cloned the project to. Alternatively, in OSX, you can just drag the folder from Finder onto the VS Code icon in your dock. From here you will need to open the terminal, `Terminal → New Terminal`.
 
@@ -46,14 +48,16 @@ Now you can enter the command to install it:
 npm install
 ```
 
-3. Now that you have the project and all the dependencies installed, you can start developing. To start working on your project, enter the following command into the terminal:
+*Step 3*
+Now that you have the project and all the dependencies installed, you can start developing. To start working on your project, enter the following command into the terminal:
 ```bash 
 npm run dev
 ```
 
 This puts the project into development mode which will watch any of the files you're working on for changes. Next time you save an edit to HTML, CSS, Javascript, or add in some img assets, the plugin will automatically build a new version. Your plugin will get assembled in the `dist` directory. This is the directory you will point Figma to when installing the plugin locally.
 
-4. Okay, so you're done creating your plugin and it's ready for use or to be submitted to Figma. What's next? There is just one more command to run. This command will build the final version of your plugin and minify all of your code, and remove any unused CSS, to reduce it down to the smallest file size possible.
+*Step 4*
+Okay, so you're done creating your plugin and it's ready for use or to be submitted to Figma. What's next? There is just one more command to run. This command will build the final version of your plugin and minify all of your code, and remove any unused CSS, to reduce it down to the smallest file size possible.
 ```bash 
 npm run build
 ```
