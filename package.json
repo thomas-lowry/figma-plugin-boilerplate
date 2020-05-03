@@ -28,6 +28,7 @@
     "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
+    "figma-plugin-ds": "0.0.5",
     "gulp": "^4.0.2",
     "gulp-base64-inline": "^1.0.6",
     "gulp-concat": "^2.6.1",
