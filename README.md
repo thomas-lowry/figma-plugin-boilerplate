@@ -1,5 +1,13 @@
-# figma-plugin-boilerplate
- A boilerplate for creating Figma Plugins with html, css and vanilla javascript without frameworks
+# Figma Plugin Boilerplate (FPB)
+ A starter project for creating Figma Plugins with HTML, CSS (+ SCSS) and vanilla Javascript without any frameworks
+
+## Contents
+* [Intro](#intro)
+* [What is this and how will it make my life easier](#what-is-this-and-how-will-it-make-my-life-easier)
+* [Getting started](#getting-started)
+* [FAQ](#faq)
+
+---
 
 ## Intro
 I wanted to create an easy to use starting point for anyone interested in creating a Figma Plugin. If you are comfortable with HTML, CSS, and know a bit of native Javascript, this is designed to help you get a simple performant plugin off the ground. No messing around with any UI frameworks!
@@ -8,7 +16,7 @@ When creating a Figma Plugin, one of the constraints is the inability to link to
 
 To simplify this, this boilerplate is already setup with a build configuration specifically for writing Figma Plugins. You can write HTML in the `src/ui/index.html` file, plain old CSS inside the `src/ui/styles/styles.scss` file, and native Javascript inside the `src/ui/js/scripts.js` file. If you want a .png or an .svg in your UI (`index.html`), just place it in the `src/ui/img` directory and reference it as your normally would. When ready, executing the build script will automically inline and bundle all of your external scripts and assets into a single minified .html file in the `dist` directory.
 
-## What is this boilerplate and how will it make my life easier
+## What is this and how will it make my life easier
 This boilerplate is a pre-configured build process (using a toolkit called Gulp) that makes writing your first plugin easier and faster. If you have never used a build process, this enables you to approach your plugin in the same way you might approach a basic website, and lets you run a single command to automate a bunch of stuff behind the scenes to translate your plugin into a finished state ready for use in Figma.
 
 **What is included**
