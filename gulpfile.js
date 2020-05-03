@@ -27,16 +27,15 @@ const files = {
     jsPath: 'src/ui/js/**/*.js',
     tsPath: 'src/main/**/*.ts',
     html: 'src/ui/index.html',
-    manifest: 'src/manifest.json'
+    manifest: 'src/manifest.json',
+    assetsPath: 'src/ui/img/*.{png,gif,jpg,svg,jpeg}'
 }
 
 // SCSS task: compiles the styles.scss file into styles.css
 function scssTask(){    
     return src(files.scssPath)
         .pipe(sass()) //compile to css
-        .pipe(purgecss({
-            content: ['src/ui/index.html']
-        }))
+        .pipe(production ? purgecss({content: ['src/ui/index.html']}) : util.noop())
         .pipe(dest('src/ui/tmp') //put in temporary directory
     ); 
 }
