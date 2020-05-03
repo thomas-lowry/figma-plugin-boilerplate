@@ -7,8 +7,6 @@
 * [Getting started](#getting-started)
 * [FAQ](#faq)
 
----
-
 ## Intro
 I wanted to create an easy to use starting point for anyone interested in creating a Figma Plugin. If you are comfortable with HTML, CSS, and know a bit of native Javascript, this is designed to help you get a simple performant plugin off the ground. No messing around with any UI frameworks!
 
