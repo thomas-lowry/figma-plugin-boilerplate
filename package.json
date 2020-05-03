@@ -31,7 +31,6 @@
     "gulp": "^4.0.2",
     "gulp-base64-inline": "^1.0.6",
     "gulp-concat": "^2.6.1",
-    "gulp-inline-image-html": "^0.2.3",
     "gulp-inline-source": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-purgecss": "^2.1.2",

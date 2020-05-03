@@ -13,7 +13,7 @@ const replace = require('gulp-replace');
 const base64 = require('gulp-base64-inline'); //inline any css background images with base64 
 const inlinesource = require('gulp-inline-source'); //inline js and css and images
 const util = require('gulp-util'); //enables a dev and production build with minification
-var production = !!util.env.production;
+const production = !!util.env.production;
 
 //clean up
 const purgecss = require('gulp-purgecss'); //remove unused css
