@@ -24,6 +24,7 @@ figma.ui.onmessage = msg => {
 
 			if (msg.shape === 'rectangle') {
 				shape = figma.createRectangle();
+				console.log('hello');
 			} else if (msg.shape === 'triangle') {
 				shape = figma.createPolygon();
 			} else {
