@@ -1,5 +1,7 @@
-@import 'hello';
 
-body {
-    background-color: red;
-}
+/* For full documentation of Figma Plugin DS css usage and utility classes visit:
+https://github.com/thomas-lowry/figma-plugin-ds */
+@import '../../../node_modules/figma-plugin-ds/dist/figma-plugin-ds.css';
+
+
+/* Add your own scripts */

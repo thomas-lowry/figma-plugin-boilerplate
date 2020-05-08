@@ -15,17 +15,16 @@ const inlinesource = require('gulp-inline-source'); //inline js and css and imag
 const concatCss = require('gulp-concat-css'); //concatenate js files into one
 const htmlmin = require('gulp-htmlmin'); //minify html
 
+//for signalling dev vs. prod build
 const util = require('gulp-util'); //enables a dev and production build with minification
 var production = !!util.env.production; //this keeps track of whether or not we are doing a normal or priduction build
 
-//clean up
+//clean up post build
 const purgecss = require('gulp-purgecss'); //remove unused css
 const del = require('del'); //plugin to delete temp files after build
 
-// TS configuration for UI
-//change this to true if you want to write your UI Javascript in Typescript as well
-// you will also need to rename scripts.js to scripts.ts
-let tsUI = false;
+// TS Config
+const tsProject = ts.createProject('tsconfig.json', { noImplicitAny: true, outFile: 'code.js' });
 
 // File paths
 const files = { 
@@ -53,7 +52,7 @@ function scssTask(){
 
 // JS task: concatenates JS files to scripts.js (minifies on production build)
 function jsTask(){
-    return src([files.jsPath, 'node_modules/figma-plugin-ds/dist/iife/figma-plugin-ds.js'])
+    return src(['node_modules/figma-plugin-ds/dist/iife/figma-plugin-ds.js', files.jsPath])
         .pipe(concat('scripts.js'))
         .pipe(dest('src/ui/tmp')
     );
@@ -62,10 +61,7 @@ function jsTask(){
 //TS task: compiles the typescript main code that interfaces with the figma plugin API
 function tsTask() {
     return src([files.tsPath])
-        .pipe(ts({
-            noImplicitAny: true,
-            outFile: 'code.js'
-        }))
+        .pipe(tsProject())
         .pipe(production ? minify({
             ext: {
                 min: '.js'

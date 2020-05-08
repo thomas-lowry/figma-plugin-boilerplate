@@ -9,13 +9,32 @@
     </head>
     <body>
 
-        <select name="" id="select-menu1" class="select-menu">
-            <option value="1" >Item 1</option>
-            <option value="2" selected>Item 2</option>
-            <option value="3" >Item 3</option>
-            <option value="4" >Item 4</option>
+    <div class="wrapper p-xxsmall"></div>
+
+        <!-- Select menu -->
+        <div class="label">Shape</div>
+        <select id="shape" class="select-menu mb-xxsmall">
+            <option>Please select a shape...</option>
+            <option value="square">Square</option>
+            <option value="triangle" >Triangle</option>
+            <option value="circle" >Circle</option>
         </select>
-        
-        <script src="./tmp/scripts.js"></script>
+
+        <!-- Count input -->
+        <div class="label">Count</div>
+        <div class="input input--with-icon">
+            <div class="icon">#</div>
+            <input id="count" type="input" class="input__field" value="5">
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex p-xxsmall mb-xsmall">
+            <button id="cancel" class='button button--secondary mr-xxsmall'>Cancel</button>
+            <button id="createShapes" class='button button--primary'>Create shapes</button> 
+        </div>
+
+
+    </div>
+    <script src="./tmp/scripts.js"></script>
     </body>
 </html>
