@@ -9,12 +9,12 @@
     </head>
     <body>
 
-    <div class="wrapper p-xxsmall"></div>
+    <div class="p-xxsmall">
 
         <!-- Select menu -->
         <div class="label">Shape</div>
         <select id="shape" class="select-menu mb-xxsmall">
-            <option>Please select a shape...</option>
+            <option value="">Please select a shape...</option>
             <option value="square">Square</option>
             <option value="triangle" >Triangle</option>
             <option value="circle" >Circle</option>
@@ -22,7 +22,7 @@
 
         <!-- Count input -->
         <div class="label">Count</div>
-        <div class="input input--with-icon">
+        <div class="input input--with-icon mb-xxsmall">
             <div class="icon">#</div>
             <input id="count" type="input" class="input__field" value="5">
         </div>
@@ -32,9 +32,9 @@
             <button id="cancel" class='button button--secondary mr-xxsmall'>Cancel</button>
             <button id="createShapes" class='button button--primary'>Create shapes</button> 
         </div>
-
-
+        
     </div>
+
     <script src="./tmp/scripts.js"></script>
     </body>
 </html>
