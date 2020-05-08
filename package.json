@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
+    "@figma/plugin-typings": "^1.15.0",
     "autoprefixer": "^9.7.6",
     "del": "^5.1.0",
-    "figma-plugin-ds": "0.0.6",
+    "figma-plugin-ds": "0.0.7",
     "gulp": "^4.0.2",
     "gulp-base64-inline": "^1.0.6",
     "gulp-concat": "^2.6.1",
