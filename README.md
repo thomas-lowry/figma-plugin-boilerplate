@@ -8,14 +8,17 @@
 * [FAQ](#faq)
 
 ## Intro
+
+**Goal:**
 I wanted to create an easy to use starting point for anyone interested in creating a Figma Plugin. If you are comfortable with HTML, CSS, and know a bit of native Javascript, this is designed to help you get a simple performant plugin off the ground. No messing around with any UI frameworks!
 
+**Why:**
 When creating a Figma Plugin, one of the constraints is the inability to link to any external scripts, or assets outside of your core plugin files. This means, if you have a folder of images, an external stylesheet, or an external javascript file for your plugin's UI, you cannot link to them. These assets need to either be hosted somewhere on the web, or they need to be bundled into one file. So instead of writing your css in a .css or .scss file, you would need to write everything inside the head tag. This is why many developers opt to use Javascript frameworks and bundlers like Webpack or Rollup—but this way often forces you into doing things in a very Javascript centric way which is not always easy to grasp when you want to use the languages you're already familiar with.
 
+**What:**
 To simplify this, this boilerplate is already setup with a build configuration specifically for writing Figma Plugins. You can write HTML in the `src/ui/index.html` file, plain old CSS inside the `src/ui/styles/styles.scss` file, and native Javascript inside the `src/ui/js/scripts.js` file. If you want a .png or an .svg in your UI (`index.html`), just place it in the `src/ui/img` directory and reference it as your normally would. When ready, executing the build script will automically inline and bundle all of your external scripts and assets into a single minified .html file in the `dist` directory.
 
-## What is this and how will it make my life easier
-This boilerplate is a pre-configured build process (using a toolkit called Gulp) that makes writing your first plugin easier and faster. If you have never used a build process, this enables you to approach your plugin in the same way you might approach a basic website, and lets you run a single command to automate a bunch of stuff behind the scenes to translate your plugin into a finished state ready for use in Figma.
+This boilerplate is a pre-configured build process (using a toolkit called Gulp) that makes writing your first plugin easier and faster. If you have never used a build process, it will enables you to approach your plugin in the same way you might approach a basic website. Then by running a single command, it will automate a bunch of stuff behind the scenes to translate your plugin into a finished state ready for use in Figma so that you don't have to do any manual grunt work or change your approach to writing code.
 
 **What is included**
 - Pre-configured structure and example user-interface (html, css, and javascript)—located in the `src/ui` directory
