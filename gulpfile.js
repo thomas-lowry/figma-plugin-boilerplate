@@ -41,7 +41,6 @@ function scssTask(){
         .pipe(sass()) //compile to css
         .pipe(replace('background-image: url(', 'background-image: inline('))
         .pipe(base64('')) //base 64 encode any background images
-        .pipe(production ? purgecss({content: ['src/ui/index.html', 'src/ui/tmp/scripts.js']}) : util.noop()) //remove unused CSS
         .pipe(postcss([ autoprefixer()])) // PostCSS plugins
         .pipe(production ? csso() : util.noop()) //minify css on production build
         .pipe(dest('src/ui/tmp') //put in temporary directory
