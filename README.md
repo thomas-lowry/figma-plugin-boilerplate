@@ -26,7 +26,7 @@ To simplify this, this boilerplate is already setup with a build configuration s
 This boilerplate is a pre-configured build process (using a toolkit called Gulp) that makes writing your first plugin easier and faster. If you have never used a build process, it will enables you to approach your plugin in the same way you might approach a basic website. Then by running a single command, it will automate a bunch of stuff behind the scenes to translate your plugin into a finished state ready for use in Figma so that you don't have to do any manual grunt work or change your approach to writing code.
 
 
-**What is included**
+### Whats included
 - Pre-configured structure and example user-interface (html, css, and javascript)—located in the `src/ui` directory
 - Pre-configured structure of your plugin code (this is the part of your plugin that interfaces with the Figma API)—located in the `src/main` directory
 - Already configured with a set of UI components from Figma Plugin DS that match the Figma UI (see the Figma Plugin DS documentation for usage)
