@@ -43,7 +43,7 @@ function scssTask(){
         .pipe(base64('')) //base 64 encode any background images
         .pipe(production ? purgecss({content: ['src/ui/index.html', 'src/ui/tmp/scripts.js']}) : util.noop()) //remove unused CSS
         .pipe(postcss([ autoprefixer()])) // PostCSS plugins
-       // .pipe(production ? csso() : util.noop()) //minify css on production build
+        .pipe(production ? csso() : util.noop()) //minify css on production build
         .pipe(dest('src/ui/tmp') //put in temporary directory
     ); 
 }
@@ -55,7 +55,7 @@ function cssTask() {
             content: ['src/ui/index.html', 'src/ui/tmp/scripts.js'],
             whitelistPatterns: [/select-menu(.*)/],
         }) : util.noop()) //remove unused CSS
-       // .pipe(production ? csso() : util.noop()) //minify css on production build
+       .pipe(production ? csso() : util.noop()) //minify css on production build
         .pipe(dest('src/ui/tmp') //put in temporary directory
     );
 }
@@ -89,7 +89,7 @@ function htmlTask() {
             compress: production ? true : false,
             pretty: true
         }))
-       //.pipe(production ? htmlmin({ collapseWhitespace: true }) : util.noop())
+       .pipe(production ? htmlmin({ collapseWhitespace: true }) : util.noop())
         .pipe(dest('dist'));
 }
 
