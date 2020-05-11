@@ -12,7 +12,6 @@ const ts = require('gulp-typescript'); //typescript compiler
 const replace = require('gulp-replace'); //replace a string in a file being processed
 const base64 = require('gulp-base64-inline'); //inline any css background images with base64 
 const inlinesource = require('gulp-inline-source'); //inline js and css and images
-const concatCss = require('gulp-concat-css'); //concatenate js files into one
 const htmlmin = require('gulp-htmlmin'); //minify html
 
 //for signalling dev vs. prod build
@@ -42,12 +41,23 @@ function scssTask(){
         .pipe(sass()) //compile to css
         .pipe(replace('background-image: url(', 'background-image: inline('))
         .pipe(base64('')) //base 64 encode any background images
-        .pipe(concatCss('bundle.css')) //concatenate all css files include imported figma plugin ds 
         .pipe(production ? purgecss({content: ['src/ui/index.html', 'src/ui/tmp/scripts.js']}) : util.noop()) //remove unused CSS
         .pipe(postcss([ autoprefixer()])) // PostCSS plugins
-        .pipe(production ? csso() : util.noop()) //minify css on production build
+       // .pipe(production ? csso() : util.noop()) //minify css on production build
         .pipe(dest('src/ui/tmp') //put in temporary directory
     ); 
+}
+
+//CSS Task: Process Figma Plugin DS CSS
+function cssTask() {
+    return src('node_modules/figma-plugin-ds/dist/figma-plugin-ds.css')
+        .pipe(production ? purgecss({
+            content: ['src/ui/index.html', 'src/ui/tmp/scripts.js'],
+            whitelistPatterns: [/select-menu(.*)/],
+        }) : util.noop()) //remove unused CSS
+       // .pipe(production ? csso() : util.noop()) //minify css on production build
+        .pipe(dest('src/ui/tmp') //put in temporary directory
+    );
 }
 
 // JS task: concatenates JS files to scripts.js (minifies on production build)
@@ -79,7 +89,7 @@ function htmlTask() {
             compress: production ? true : false,
             pretty: true
         }))
-        .pipe(production ? htmlmin({ collapseWhitespace: true }) : util.noop())
+       //.pipe(production ? htmlmin({ collapseWhitespace: true }) : util.noop())
         .pipe(dest('dist'));
 }
 
@@ -103,6 +113,7 @@ function watchTask(){
         series(
             parallel(jsTask, tsTask),
             scssTask,
+            cssTask,
             htmlTask,
             manifestTask,
             cleanUp
@@ -114,7 +125,8 @@ function watchTask(){
 // Runs the scss, js, and typescript tasks simultaneously
 exports.default = series(
     parallel(jsTask, tsTask),
-    scssTask, 
+    scssTask,
+    cssTask,
     htmlTask,
     manifestTask,
     cleanUp,
