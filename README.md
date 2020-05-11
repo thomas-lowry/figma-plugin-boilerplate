@@ -1,5 +1,5 @@
 # Figma Plugin Boilerplate (FPB)
- A starter project for creating Figma Plugins with HTML, CSS (+ SCSS) and vanilla Javascript without any frameworks
+ A starter project for creating Figma Plugins with HTML, CSS (+ SCSS) and vanilla Javascript without any frameworks. It comes pre-setup with a UI library that matches the Figma UI, refer to the [Figma Plugin DS](https://github.com/thomas-lowry/figma-plugin-ds) documentation for usage.
 
 ## Contents
 * [Intro](#intro)
