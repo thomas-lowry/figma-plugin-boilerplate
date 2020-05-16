@@ -34,6 +34,7 @@ This boilerplate is a pre-configured build process (using a toolkit called Gulp)
 
 Typing in commands to the terminal can feel intimidating. I know it scared me away from going deeper for many years. You don't need to be an expert and there is only four commands that you will need to enter to get started!
 
+**Note** _This starter boilerplate is not setup to support importing and bundling ES6 modules at the current time._
 
 ## Getting started
 
